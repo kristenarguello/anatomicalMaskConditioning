@@ -1,0 +1,35 @@
+# ── Common ────────────────────────────────────────────────────────────────────
+numpy
+Pillow
+natsort
+tqdm
+
+# ── Mask generation (mask-generation/) ───────────────────────────────────────
+totalsegmentator
+nibabel
+pydicom
+
+# ── Evaluation (evaluation/) ─────────────────────────────────────────────────
+# PyTorch: install the CUDA-appropriate build from https://pytorch.org/get-started/locally/
+torch
+torchvision
+pandas
+matplotlib
+scikit-image
+opencv-python
+mpi4py        # iDDPM multi-GPU inference
+diffusers>=0.21.4  # SegGuidedDiff inference
+
+# ── CoreDiff (models/corediff/) ───────────────────────────────────────────────
+einops
+scipy
+h5py
+wandb
+
+# ── iDDPM (models/iddpm/) ─────────────────────────────────────────────────────
+blobfile
+# Also run: pip install -e models/iddpm/
+
+# ── SegGuidedDiff (models/seg-guided-diff/) ───────────────────────────────────
+# Also run: pip install -r models/seg-guided-diff/requirements.txt
+datasets
