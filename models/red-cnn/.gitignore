@@ -1,0 +1,5 @@
+**/fig/*
+__pycache__/
+**/save/*
+.codex
+.claude
