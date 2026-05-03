@@ -39,15 +39,13 @@ from skimage.metrics import structural_similarity
 # Shared config
 # ---------------------------------------------------------------------------
 
-DATASET_ROOT = (
-    "/mnt/G-SSD/kristen/seg-guided-translation/"
-    "segmentation-guided-diffusion/dataset_l506_val"
-)
-LDCT_DIR = os.path.join(DATASET_ROOT, "png_dataset", "test", "1mm", "QD")
-NDCT_DIR = os.path.join(DATASET_ROOT, "png_dataset", "test", "1mm", "FD")
-MASK_DIR = os.path.join(DATASET_ROOT, "multilabel")
+_HERE        = os.path.dirname(os.path.abspath(__file__))
+DATASET_ROOT = os.environ.get("DATASET_ROOT", os.path.join(_HERE, "..", "dataset"))
+LDCT_DIR     = os.path.join(DATASET_ROOT, "png_dataset", "test", "1mm", "QD")
+NDCT_DIR     = os.path.join(DATASET_ROOT, "png_dataset", "test", "1mm", "FD")
+MASK_DIR     = os.path.join(DATASET_ROOT, "multilabel")
 
-RESULTS_ROOT = "/mnt/G-SSD/kristen/results"
+RESULTS_ROOT = os.environ.get("RESULTS_ROOT", os.path.join(_HERE, "results"))
 
 TISSUES = ["subcutaneous_fat", "torso_fat", "skeletal_muscle", "intermuscular_fat"]
 

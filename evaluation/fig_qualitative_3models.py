@@ -20,10 +20,12 @@ from PIL import Image
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 
-QUAL_DIR  = "/mnt/G-SSD/kristen/results/qualitative"
-PRED_DIR  = "/mnt/G-SSD/kristen/results"
-OUT_PATH  = "/mnt/G-SSD/kristen/results/fig_qualitative_3models.pdf"
-OUT_PNG   = "/mnt/G-SSD/kristen/results/fig_qualitative_3models.png"
+_HERE     = os.path.dirname(os.path.abspath(__file__))
+_RESULTS  = os.environ.get("RESULTS_ROOT", os.path.join(_HERE, "results"))
+QUAL_DIR  = os.path.join(_RESULTS, "qualitative")
+PRED_DIR  = _RESULTS
+OUT_PATH  = os.path.join(_RESULTS, "fig_qualitative_3models.pdf")
+OUT_PNG   = os.path.join(_RESULTS, "fig_qualitative_3models.png")
 
 # One case folder per model row.  Set to None to auto-pick (first available).
 # corediff_ctx: L014 is missing — default falls back to L058.
@@ -130,8 +132,6 @@ def draw_roi_rect(ax, box, color=ROI_RECT_COLOR, lw=1.5):
         (c0, r0), c1 - c0, r1 - r0,
         linewidth=lw, edgecolor=color, facecolor="none"
     ))
-
-# /mnt/G-SSD/kristen/final_results
 
 # ── LAYOUT ────────────────────────────────────────────────────────────────────
 # Columns 0-3: full-resolution images

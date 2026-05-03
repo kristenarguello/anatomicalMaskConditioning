@@ -8,8 +8,8 @@
 #   ./run_all_eval.sh <ntfy_topic> <gpu1> [gpu2]
 #
 # Examples:
-#   ./run_all_eval.sh kristen-eval 3        # single GPU
-#   ./run_all_eval.sh kristen-eval 3 0      # two GPUs (iDDPM+SegGuided split across both)
+#   ./run_all_eval.sh my-eval 3             # single GPU
+#   ./run_all_eval.sh my-eval 3 0           # two GPUs (iDDPM+SegGuided split across both)
 # ============================================================
 
 TOPIC="${1:?Usage: ./run_all_eval.sh <ntfy_topic> <gpu1> [gpu2]}"
@@ -21,6 +21,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RESULTS_DIR="${SCRIPT_DIR}/results"
 LOG_DIR="${RESULTS_DIR}/logs"
 mkdir -p "${LOG_DIR}"
+DATASET_ROOT="${DATASET_ROOT:?Set DATASET_ROOT to the dataset root (parent of png_dataset/ and multilabel/)}"
+export DATASET_ROOT
+export RESULTS_ROOT="${RESULTS_DIR}"
 
 START_TIME=$(date +%s)
 

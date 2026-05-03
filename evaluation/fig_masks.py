@@ -27,13 +27,14 @@ from PIL import Image
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 
-MASK_BASE = (
-    "/mnt/G-SSD/kristen/seg-guided-translation/"
-    "segmentation-guided-diffusion/dataset_l506_val/multilabel"
+_HERE     = os.path.dirname(os.path.abspath(__file__))
+_RESULTS  = os.environ.get("RESULTS_ROOT", os.path.join(_HERE, "results"))
+MASK_BASE = os.path.join(
+    os.environ.get("DATASET_ROOT", os.path.join(_HERE, "..", "dataset")), "multilabel"
 )
-QUAL_DIR   = "/mnt/G-SSD/kristen/results/qualitative"
-OUT_PATH   = "/mnt/G-SSD/kristen/results/fig_masks.pdf"
-OUT_PNG    = "/mnt/G-SSD/kristen/results/fig_masks.png"
+QUAL_DIR  = os.path.join(_RESULTS, "qualitative")
+OUT_PATH  = os.path.join(_RESULTS, "fig_masks.pdf")
+OUT_PNG   = os.path.join(_RESULTS, "fig_masks.png")
 
 CASE       = "L058_QD_1_1_CT_0037"
 MASK_SPLIT = "test/1mm/QD"

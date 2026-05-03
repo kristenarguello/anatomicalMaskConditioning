@@ -18,7 +18,8 @@ import numpy as np
 import pandas as pd
 
 
-RESULTS_ROOT = "/mnt/G-SSD/kristen/results"
+_HERE        = os.path.dirname(os.path.abspath(__file__))
+RESULTS_ROOT = os.environ.get("RESULTS_ROOT", os.path.join(_HERE, "results"))
 
 # Display order and labels for the table
 VARIANT_ORDER = [
