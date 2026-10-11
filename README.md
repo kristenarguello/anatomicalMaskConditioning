@@ -1,5 +1,10 @@
 # 🧠 Anatomical Mask Conditioning for LDCT Denoising
 
+[![BRACIS 2026](https://img.shields.io/badge/BRACIS-2026-blue)](https://books.google.com/books?id=904UEgAAQBAJ)
+
+> 🎉 **Accepted at BRACIS 2026** — 36th Brazilian Conference on Intelligent Systems (Cuiabá, MT, Brazil, October 19–22, 2026).  
+> 📄 **Paper:** *Anatomical Mask Conditioning for Low-Dose CT Denoising: An Architecture-Focused Investigation* — [Proceedings](https://books.google.com/books?id=904UEgAAQBAJ)
+
 Does providing anatomical segmentation masks as spatial conditioning improve low-dose CT (LDCT) denoising? This repository contains the code for a controlled study across four architectures — from a classical CNN to diffusion models — each trained as a **baseline** (image-only) and a **mask-conditioned** variant on the AAPM-Mayo 2016/2020 dataset.
 
 ---
@@ -116,3 +121,18 @@ Quarter-dose (QD) 1mm reconstruction, B30 kernel. 12 test patients (~1906 test s
 
 - 2016 data: https://ctcicblog.mayo.edu/2016-low-dose-ct-grand-challenge/  
 - 2020 TCIA extension: https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=52758026
+
+---
+
+## 📝 Citation
+
+If you use this code, please cite our BRACIS 2026 paper:
+
+```bibtex
+@inproceedings{arguello2026anatomical,
+  title     = {Anatomical Mask Conditioning for Low-Dose {CT} Denoising: An Architecture-Focused Investigation},
+  author    = {Arguello, Kristen K. and Contassot, Ra{\'i}ssa and Ughini, Augusto Ochoa and Kupssinsk{\"u}, Lucas Silveira and Barros, Rodrigo C.},
+  booktitle = {Proceedings of the 36th Brazilian Conference on Intelligent Systems (BRACIS)},
+  year      = {2026}
+}
+```
